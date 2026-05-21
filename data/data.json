@@ -1,0 +1,129 @@
+{
+  "bio": {
+    "name": "Abraar Jihaad Hibatullah",
+    "title": "Informatics Student & Deep Learning Practitioner",
+    "bio": "Informatics student experienced in the development, training, and evaluation of Deep Learning models and complex data processing. Focused on building high-performance AI systems and modern full-stack applications.",
+    "avatar": "/images/avatar.jpg"
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Kriptoin Mobile App",
+      "description": "An educational mobile application providing a risk-free, interactive cryptocurrency trading simulation for beginners.",
+      "slug": "kriptoin-mobile-app",
+      "tags": [
+        "React Native",
+        "TypeScript",
+        "Mobile Development"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar",
+      "live_url": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "SIGAP Web App",
+      "description": "A centralized, intelligent News Web Application implementing advanced real-time web scraping and artificial intelligence integration.",
+      "slug": "sigap-web-app",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Ollama AI",
+        "Llama 3.2",
+        "Web Scraping"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar",
+      "live_url": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Air Quality Analysis",
+      "description": "Comprehensive data visualization and patterns extraction for the Beijing Station air quality parameters.",
+      "slug": "air-quality-analysis",
+      "tags": [
+        "Python",
+        "Pandas",
+        "Data Visualization"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar/Air-Quality-Analysis-Dicoding",
+      "live_url": "",
+      "created_at": "2024-06-01T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "PixPlay Cloud Music Player",
+      "description": "Cloud-based music streaming service featuring REST APIs, full-stack layout, and modern CI/CD deployment pipelines.",
+      "slug": "pixplay-music-player",
+      "tags": [
+        "Node.js",
+        "Express",
+        "React",
+        "CI/CD"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar",
+      "live_url": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "company": "Apple Developer Academy @ Binus",
+      "role": "Cohort Member",
+      "description": "Participating in a prestigious, nine-month scholarship program focused on coding, design, and business skills within the iOS ecosystem. Employs a challenge-based learning approach to develop world-class applications.",
+      "start_date": "2026-03-01",
+      "end_date": null,
+      "is_current": true,
+      "created_at": "2026-03-01T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "company": "Kepolisian Daerah Istimewa Yogyakarta (POLDA DIY)",
+      "role": "Software Engineering Intern",
+      "description": "Architected SIGAP, an advanced system that collects and analyzes news data in real time. Integrated Ollama AI and Llama 3.2 prompting to streamline information retrieval, improving analysis speed by up to 40%. Built high-performance backend APIs reducing overall data processing overheads by 30-50% while supporting real-time parsing of over 1,000 news articles monthly.",
+      "start_date": "2025-04-01",
+      "end_date": "2025-06-30",
+      "is_current": false,
+      "created_at": "2025-04-01T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "company": "Bangkit Academy by Google, GoTo, Tokopedia, Traveloka",
+      "role": "Machine Learning Cohort",
+      "description": "Completed extensive curriculum specializing in Deep Learning, Mobile Development, and Cloud Architecture. Built machine learning pipelines using TensorFlow and Keras, implementing predictive models that achieved 92% real-world accuracy. Graduated with Distinction, ranking in the top 10% of the entire cohort.",
+      "start_date": "2024-08-01",
+      "end_date": "2024-12-31",
+      "is_current": false,
+      "created_at": "2024-08-01T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "company": "AIESEC in UPN \"Veteran\" Yogyakarta",
+      "role": "Quality & Customer Experience Team Leader",
+      "description": "Led operations for AIESEC Future Leaders. Increased initiative profitability by 75% over a 12-month period, far exceeding original forecasts. Managed customer satisfaction metrics with a remarkable average score of 9.7/10.",
+      "start_date": "2024-02-01",
+      "end_date": "2025-01-31",
+      "is_current": false,
+      "created_at": "2024-02-01T00:00:00Z"
+    }
+  ],
+  "skills": [
+    "Deep Learning",
+    "TensorFlow",
+    "Keras",
+    "Python",
+    "Ollama AI",
+    "Llama 3.2",
+    "TypeScript",
+    "Next.js",
+    "React Native",
+    "Node.js",
+    "REST APIs",
+    "CI/CD"
+  ]
+}
