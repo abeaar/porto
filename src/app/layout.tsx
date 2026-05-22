@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Portfolio",
-  description: "Software Engineer & ML Enthusiast",
+  title: "Abraar Jihaad Hibatullah | Portfolio",
+  description: "Informatics Student & Deep Learning Practitioner",
 };
 
 export default function RootLayout({
