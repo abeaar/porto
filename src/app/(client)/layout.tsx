@@ -27,7 +27,7 @@ export default function ClientLayout({
       <div className="flex-1">{children}</div>
       <footer className="bg-zinc-950 border-t border-zinc-900 text-zinc-400 py-8 px-4 text-sm">
         <div className="max-w-6xl mx-auto text-center">
-          <p>&copy; {new Date().getFullYear()} Your Portfolio. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Abraar Jihaad Hibatullah .</p>
         </div>
       </footer>
     </div>
