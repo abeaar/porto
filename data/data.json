@@ -1,45 +1,98 @@
 {
   "bio": {
     "name": "Abraar Jihaad Hibatullah",
-    "title": "Informatics Student & Deep Learning Practitioner",
-    "bio": "Informatics student experienced in the development, training, and evaluation of Deep Learning models and complex data processing. Focused on building high-performance AI systems and modern full-stack applications.",
+    "title": "Computer Science Graduate | iOS & Machine Learning Developer",
+    "bio": "Computer Science graduate with real-world project experience through Bangkit Academy by Google and Apple Developer Academy. Hands-on with Python, TensorFlow, and Keras for machine learning; Swift for iOS development; and JavaScript/Node.js with REST APIs and CI/CD for full-stack web development.",
     "avatar": "/images/avatar.jpg"
   },
   "projects": [
     {
       "id": "1",
-      "title": "Kriptoin Mobile App",
-      "description": "An educational mobile application providing a risk-free, interactive cryptocurrency trading simulation for beginners.",
-      "slug": "kriptoin-mobile-app",
+      "title": "K-sini: Indoor Navigation iOS App",
+      "description": "Indoor navigation app for train stations, built in a cross-functional team at Apple Developer Academy. GeoJSON-driven multi-floor mapping rendered as layered MapKit overlays, BFS shortest-path routing, and compass-guided directional haptic feedback for eyes-free navigation.",
+      "slug": "ksini-indoor-navigation",
       "tags": [
-        "React Native",
-        "TypeScript",
-        "Mobile Development"
+        "Swift",
+        "SwiftUI",
+        "MapKit",
+        "CoreHaptics",
+        "MVVM"
       ],
       "image_url": "",
-      "github_url": "https://github.com/abeaar",
+      "github_url": "https://github.com/abeaar/K-sini",
       "live_url": "",
-      "created_at": "2025-01-01T00:00:00Z"
+      "created_at": "2026-06-01T00:00:00Z"
     },
     {
       "id": "2",
-      "title": "SIGAP Web App",
-      "description": "A centralized, intelligent News Web Application implementing advanced real-time web scraping and artificial intelligence integration.",
+      "title": "Kriptoin: Crypto Trading Simulation App",
+      "description": "Risk-free cryptocurrency trading simulation built with Flutter. Real-time market data from the CoinGecko API with a Hive-based caching layer, SHA-256 password hashing with fingerprint biometric login, and 7 coordinated Provider state managers across features.",
+      "slug": "kriptoin-mobile-app",
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Provider",
+        "Hive",
+        "REST API"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar/fokuskripto",
+      "live_url": "",
+      "created_at": "2025-06-01T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "PixPlay: Cloud-Based Music Player",
+      "description": "Full-stack music player — React frontend and an Express.js REST API (MVC) with Sequelize over MySQL, JWT authentication with refresh-token cookies, and an automated Cloud Build CI/CD pipeline deploying Docker images to Cloud Run.",
+      "slug": "pixplay-music-player",
+      "tags": [
+        "Node.js",
+        "Express",
+        "React",
+        "MySQL",
+        "GCP",
+        "CI/CD"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar/spotify-be",
+      "live_url": "",
+      "created_at": "2025-05-01T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "ML for Earthquake Classification — Undergraduate Thesis",
+      "description": "End-to-end ML pipeline over 2,800+ seismic events: ObsPy waveform processing, a CNN autoencoder with a custom multi-domain loss as an unsupervised feature extractor, and an XGBoost classifier — improving accuracy from 90% to 98%.",
+      "slug": "ml-earthquake-classification",
+      "tags": [
+        "Python",
+        "TensorFlow",
+        "XGBoost",
+        "ObsPy"
+      ],
+      "image_url": "",
+      "github_url": "https://github.com/abeaar/ML-VolcanicClassification",
+      "live_url": "",
+      "created_at": "2026-02-01T00:00:00Z"
+    },
+    {
+      "id": "5",
+      "title": "SIGAP: AI News Analysis Web App",
+      "description": "FastAPI backend with web scrapers (BeautifulSoup, Selenium) collecting Indonesian news portals into an SQLite database via SQLAlchemy, and an LLM pipeline using locally hosted Llama 3.2 (Ollama) that summarizes and generates solutions for every article — 1,000+ articles monthly.",
       "slug": "sigap-web-app",
       "tags": [
-        "Next.js",
-        "TypeScript",
-        "Ollama AI",
+        "Python",
+        "FastAPI",
+        "Ollama",
         "Llama 3.2",
         "Web Scraping"
       ],
       "image_url": "",
-      "github_url": "https://github.com/abeaar",
+      "github_url": "https://github.com/abeaar/SIGAP",
       "live_url": "",
-      "created_at": "2025-01-01T00:00:00Z"
+      "created_at": "2025-06-01T00:00:00Z"
     },
     {
-      "id": "3",
+      "id": "6",
       "title": "Air Quality Analysis",
       "description": "Comprehensive data visualization and patterns extraction for the Beijing Station air quality parameters.",
       "slug": "air-quality-analysis",
@@ -52,30 +105,14 @@
       "github_url": "https://github.com/abeaar/Air-Quality-Analysis-Dicoding",
       "live_url": "",
       "created_at": "2024-06-01T00:00:00Z"
-    },
-    {
-      "id": "4",
-      "title": "PixPlay Cloud Music Player",
-      "description": "Cloud-based music streaming service featuring REST APIs, full-stack layout, and modern CI/CD deployment pipelines.",
-      "slug": "pixplay-music-player",
-      "tags": [
-        "Node.js",
-        "Express",
-        "React",
-        "CI/CD"
-      ],
-      "image_url": "",
-      "github_url": "https://github.com/abeaar",
-      "live_url": "",
-      "created_at": "2025-01-01T00:00:00Z"
     }
   ],
   "experience": [
     {
       "id": "1",
-      "company": "Apple Developer Academy @ Binus",
-      "role": "Cohort Member",
-      "description": "Participating in a prestigious, nine-month scholarship program focused on coding, design, and business skills within the iOS ecosystem. Employs a challenge-based learning approach to develop world-class applications.",
+      "company": "Apple Developer Academy @ BINUS",
+      "role": "Junior Developer",
+      "description": "A nine-month program run by Apple and BINUS that teaches iOS development based on a research and development process. Working in cross-functional teams to design, build, and ship real apps.",
       "start_date": "2026-03-01",
       "end_date": null,
       "is_current": true,
@@ -84,8 +121,8 @@
     {
       "id": "2",
       "company": "Kepolisian Daerah Istimewa Yogyakarta (POLDA DIY)",
-      "role": "Software Engineering Intern",
-      "description": "Architected SIGAP, an advanced system that collects and analyzes news data in real time. Integrated Ollama AI and Llama 3.2 prompting to streamline information retrieval, improving analysis speed by up to 40%. Built high-performance backend APIs reducing overall data processing overheads by 30-50% while supporting real-time parsing of over 1,000 news articles monthly.",
+      "role": "Back-end / AI Engineer Intern",
+      "description": "Built the backend of SIGAP, a web-based news scraping system with LLM-powered analysis — FastAPI REST endpoints, scrapers covering four Indonesian news portals, and a locally hosted Llama 3.2 (Ollama) pipeline that summarizes and classifies 1,000+ articles monthly, improving analysis speed from hours to minutes.",
       "start_date": "2025-04-01",
       "end_date": "2025-06-30",
       "is_current": false,
@@ -93,9 +130,9 @@
     },
     {
       "id": "3",
-      "company": "Bangkit Academy by Google, GoTo, Tokopedia, Traveloka",
-      "role": "Machine Learning Cohort",
-      "description": "Completed extensive curriculum specializing in Deep Learning, Mobile Development, and Cloud Architecture. Built machine learning pipelines using TensorFlow and Keras, implementing predictive models that achieved 92% real-world accuracy. Graduated with Distinction, ranking in the top 10% of the entire cohort.",
+      "company": "Bangkit Academy 2024 by Google",
+      "role": "ML Engineer",
+      "description": "A Google-led academy designed to produce tech talent for Indonesia, focused on Machine Learning, Mobile Development, and Cloud Computing. Built machine learning pipelines using TensorFlow and Keras. Graduated with Distinction, ranked among the top 10% of the cohort.",
       "start_date": "2024-08-01",
       "end_date": "2024-12-31",
       "is_current": false,
@@ -104,8 +141,8 @@
     {
       "id": "4",
       "company": "AIESEC in UPN \"Veteran\" Yogyakarta",
-      "role": "Quality & Customer Experience Team Leader",
-      "description": "Led operations for AIESEC Future Leaders. Increased initiative profitability by 75% over a 12-month period, far exceeding original forecasts. Managed customer satisfaction metrics with a remarkable average score of 9.7/10.",
+      "role": "Team Leader, Quality & Customer Experience — AIESEC Future Leaders",
+      "description": "Led the Quality & Customer Experience team for AIESEC Future Leaders. Increased project profitability by 75% over a 12-month period, exceeding initial forecasts, and managed customer relations with an average satisfaction score of 9.7 out of 10.",
       "start_date": "2024-02-01",
       "end_date": "2025-01-31",
       "is_current": false,
@@ -113,17 +150,23 @@
     }
   ],
   "skills": [
-    "Deep Learning",
+    "Python",
     "TensorFlow",
     "Keras",
-    "Python",
-    "Ollama AI",
-    "Llama 3.2",
-    "TypeScript",
-    "Next.js",
-    "React Native",
+    "XGBoost",
+    "Swift",
+    "SwiftUI",
+    "Flutter",
+    "JavaScript",
     "Node.js",
+    "Express.js",
+    "React",
+    "FastAPI",
     "REST APIs",
+    "MySQL",
+    "Ollama",
+    "Docker",
+    "Google Cloud",
     "CI/CD"
   ]
 }
