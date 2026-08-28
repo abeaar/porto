@@ -18,10 +18,6 @@ export default function ExperiencePage() {
     open: false,
   });
 
-  useEffect(() => {
-    fetchExperience();
-  }, []);
-
   const fetchExperience = async () => {
     setError("");
     try {
@@ -38,6 +34,11 @@ export default function ExperiencePage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => void fetchExperience(), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSaveExperience = async (exp: Experience) => {
     if (editingExp) {

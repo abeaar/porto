@@ -1,4 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Project } from "@/types";
+import Tags from "@/components/ui/Tags";
 
 interface ProjectsGridProps {
   projects: Project[];
@@ -6,68 +9,64 @@ interface ProjectsGridProps {
 
 export default function ProjectsGrid({ projects }: ProjectsGridProps) {
   return (
-    <section id="projects" className="py-20 px-4 bg-zinc-950 border-t border-zinc-900">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white mb-12 text-center tracking-tight">
-          Featured Projects
-        </h2>
+    <section
+      id="projects"
+      className="theme-border border-b px-5 py-24 md:py-32"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12">
+          <div>
+            <h3 className="type-headline mt-4">
+              Projects
+            </h3>
+          </div>
+        </div>
+
         {projects.length === 0 ? (
-          <p className="text-center text-zinc-500">No projects added yet.</p>
+          <p className="theme-text">No projects added yet.</p>
         ) : (
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div
+          <div className="grid items-stretch gap-x-8 gap-y-12 md:grid-cols-2">
+            {projects.map((project, index) => (
+              <article
                 key={project.id}
-                className="bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-6 hover:shadow-2xl hover:shadow-green-950/10 hover:border-zinc-700/60 transition-all duration-300 flex flex-col justify-between"
+                className="theme-project group flex h-full cursor-pointer flex-col border-t pt-5 transition-colors"
               >
-                <div>
-                  {project.image_url && (
-                    <div className="mb-4 h-44 bg-zinc-800 rounded-lg overflow-hidden border border-zinc-800">
-                      <img
+                <Link
+                  href={`/projects/${project.slug}`}
+                  aria-label={`View ${project.title} case study`}
+                  className="flex flex-1 flex-col"
+                >
+                  <div className="theme-soft relative aspect-[16/10] w-full overflow-hidden">
+                    {project.image_url ? (
+                      <Image
                         src={project.image_url}
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
                       />
-                    </div>
-                  )}
-                  <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
-                    {project.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm mb-4 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 bg-green-950/50 text-green-400 border border-green-900/30 text-xs rounded-md font-medium"
-                      >
-                        {tag}
+                    ) : (
+                        <span className="theme-text type-headline absolute inset-0 flex items-center justify-center">
+                        0{index + 1}
                       </span>
-                    ))}
+                    )}
                   </div>
-                </div>
-                <div className="flex gap-4 mt-auto">
-                  {project.github_url && (
-                    <a
-                      href={project.github_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-300 hover:text-green-400 text-sm font-medium transition-colors"
-                    >
-                      GitHub →
-                    </a>
-                  )}
-                  {project.live_url && (
-                    <a
-                      href={project.live_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-300 hover:text-green-400 text-sm font-medium transition-colors"
-                    >
-                      Live Demo →
-                    </a>
-                  )}
-                </div>
-              </div>
+
+                  <div className="flex flex-1 flex-col pt-5">
+                    <h3 className="theme-text type-subheadline mt-3 min-h-[3.5rem]">
+                      {project.title}
+                    </h3>
+                    <p className="theme-text type-body mt-3">
+                      {project.short_description ?? project.description}
+                    </p>
+
+                    <div className="mt-auto pt-6">
+                      <Tags tags={project.tags} className="min-h-8 items-start" />
+                    </div>
+                  </div>
+                </Link>
+
+              </article>
             ))}
           </div>
         )}

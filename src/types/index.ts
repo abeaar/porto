@@ -11,6 +11,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  short_description?: string;
   slug: string;
   tags: string[];
   image_url?: string;
@@ -25,6 +26,9 @@ export interface Experience {
   company: string;
   role: string;
   description: string;
+  employment_type?: string;
+  location?: string;
+  tags?: string[];
   start_date: string;
   end_date?: string;
   is_current: boolean;

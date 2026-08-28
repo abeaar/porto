@@ -1,5 +1,6 @@
 import { Experience } from "@/types";
-import { formatDateShort, getMonthsDifference } from "@/lib/utils";
+import { formatDateShort } from "@/lib/utils";
+import Tags from "@/components/ui/Tags";
 
 interface ExperienceTimelineProps {
   experience: Experience[];
@@ -14,39 +15,49 @@ export default function ExperienceTimeline({
   );
 
   return (
-    <section id="experience" className="py-20 px-4 bg-zinc-950/50 border-t border-zinc-900">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white mb-12 text-center tracking-tight">
-          Experience
-        </h2>
+    <section
+      id="experience"
+      className="px-5 py-24 md:py-32"
+    >
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12">
+          <h3 className="type-headline mt-4">
+            Work Experience
+          </h3>
+        </div>
+
         {sorted.length === 0 ? (
-          <p className="text-center text-zinc-500">No experience added yet.</p>
+          <p className="theme-text">No experience added yet.</p>
         ) : (
-          <div className="space-y-8">
-            {sorted.map((exp, index) => (
-              <div key={exp.id} className="flex gap-4">
-                <div className="flex flex-col items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-full mt-2 ring-4 ring-green-950" />
-                  {index < sorted.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-zinc-800 mt-2" />
-                  )}
-                </div>
-                <div className="flex-1 pb-8">
-                  <h3 className="text-xl font-bold text-white tracking-tight">
+          <div>
+            {sorted.map((exp) => (
+              <article
+                key={exp.id}
+                className="theme-border grid gap-7 border-t py-10 md:grid-cols-[280px_1fr] md:grid-rows-[auto_auto] md:gap-x-12 md:gap-y-7 md:py-14"
+              >
+                <div className="order-1 md:col-start-2 md:row-start-1">
+                  <h3 className="theme-text type-subheadline">
                     {exp.role}
                   </h3>
-                  <p className="text-green-400 font-semibold">{exp.company}</p>
-                  <p className="text-xs text-zinc-500 mt-1 uppercase tracking-wider font-medium">
-                    {formatDateShort(exp.start_date)} &ndash;{" "}
-                    {exp.is_current
-                      ? "Present"
-                      : formatDateShort(exp.end_date || "")}
-                    {" · "}
-                    {getMonthsDifference(exp.start_date, exp.is_current ? undefined : exp.end_date)}
+                  <p className="theme-text type-body mt-3">
+                    {exp.employment_type || "Professional experience"} &middot; {exp.location || "Indonesia"}
                   </p>
-                  <p className="text-zinc-400 mt-2 text-sm leading-relaxed">{exp.description}</p>
                 </div>
-              </div>
+
+                <div className="order-2 flex flex-col gap-5 md:col-start-1 md:row-span-2 md:row-start-1">
+                  <p className="theme-text type-subheadline order-1 md:order-2">{exp.company}</p>
+                  <p className="theme-text type-body order-2 md:order-1">
+                    {formatDateShort(exp.start_date)} - {exp.is_current ? "Present" : formatDateShort(exp.end_date || "")}
+                  </p>
+                </div>
+
+                <div className="order-3 md:col-start-2 md:row-start-2">
+                  <p className="theme-text type-body max-w-3xl">
+                    {exp.description}
+                  </p>
+                  <Tags tags={exp.tags} className="mt-7" />
+                </div>
+              </article>
             ))}
           </div>
         )}

@@ -17,10 +17,6 @@ export default function ProjectsPage() {
     open: false,
   });
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
   const fetchProjects = async () => {
     setError("");
     try {
@@ -37,6 +33,11 @@ export default function ProjectsPage() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => void fetchProjects(), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSaveProject = async (project: Project) => {
     if (editingProject) {
