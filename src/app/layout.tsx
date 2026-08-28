@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ibmPlexMono, newsreader } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Abraar Jihaad Hibatullah | Portfolio",
-  description: "Informatics Student & Deep Learning Practitioner",
+  title: "Abraar Jihaad H | Software Engineer",
+  description: "The portfolio of Abraar Jihaad H, a software engineer building useful digital products.",
 };
+
+const themeInitScript = `
+  (() => {
+    try {
+      const savedTheme = window.localStorage.getItem("portfolio-theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch {}
+  })();
+`;
 
 export default function RootLayout({
   children,
@@ -25,9 +27,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full bg-zinc-950 text-zinc-50 antialiased`}
+      className={`${newsreader.variable} ${ibmPlexMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-zinc-950 text-zinc-50">{children}</body>
+      <body className="theme-background theme-text min-h-full flex flex-col">
+        {children}
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+      </body>
     </html>
   );
 }

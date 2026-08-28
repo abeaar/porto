@@ -2,24 +2,46 @@ interface SkillsSectionProps {
   skills: string[];
 }
 
+const stackGroups = [
+  { title: "Tools", items: ["Docker", "Google Cloud", "CI/CD"] },
+  { title: "Website", items: ["React", "Node.js", "Express.js", "FastAPI", "REST APIs"] },
+  { title: "Mobile", items: ["Swift", "SwiftUI", "Flutter"] },
+  { title: "AI Engineering", items: ["TensorFlow", "PyTorch", "Ollama", "Hugging Face", "MLX"] },
+];
+
 export default function SkillsSection({ skills }: SkillsSectionProps) {
+  const availableSkills = new Set(skills);
+  const groups = stackGroups
+    .map((group) => ({
+      ...group,
+      items: group.items.filter((item) => availableSkills.has(item)),
+    }))
+    .filter((group) => group.items.length > 0);
+
   return (
-    <section id="skills" className="py-20 px-4 bg-zinc-950 border-t border-zinc-900">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-white mb-12 text-center tracking-tight">
-          Skills &amp; Technologies
+    <section id="skills" className="theme-border border-b px-5 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="theme-text type-body uppercase tracking-[0.24em]">
+          Tech Stack
         </h2>
-        {skills.length === 0 ? (
-          <p className="text-center text-zinc-500">No skills added yet.</p>
+
+        {groups.length === 0 ? (
+          <p className="theme-text mt-16">No skills added yet.</p>
         ) : (
-          <div className="flex flex-wrap gap-3 justify-center">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-4 py-2 bg-zinc-900 text-zinc-300 border border-zinc-800 rounded-full text-sm font-medium hover:bg-green-950/40 hover:text-green-400 hover:border-green-800/50 transition-all duration-200"
-              >
-                {skill}
-              </span>
+          <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-14 xl:grid-cols-4">
+            {groups.map((group) => (
+              <div key={group.title}>
+                <h3 className="theme-text type-body uppercase tracking-[0.1em]">
+                  {group.title}
+                </h3>
+                <ul className="mt-7 space-y-4">
+                  {group.items.map((skill) => (
+                    <li key={skill} className="theme-text type-body">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         )}

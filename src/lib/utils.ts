@@ -19,7 +19,7 @@ export function getMonthsDifference(startDate: string, endDate?: string): string
   const start = new Date(startDate);
   const end = endDate ? new Date(endDate) : new Date();
 
-  let months =
+  const months =
     (end.getFullYear() - start.getFullYear()) * 12 +
     (end.getMonth() - start.getMonth());
 

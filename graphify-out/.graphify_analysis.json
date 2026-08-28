@@ -1,0 +1,344 @@
+{
+  "communities": {
+    "0": [
+      "src_app_api_bio_route",
+      "src_app_api_bio_route_get",
+      "src_app_api_bio_route_put",
+      "src_app_api_experience_id_route",
+      "src_app_api_experience_id_route_delete",
+      "src_app_api_experience_id_route_put",
+      "src_app_api_experience_route",
+      "src_app_api_experience_route_get",
+      "src_app_api_experience_route_post",
+      "src_app_api_projects_id_route",
+      "src_app_api_projects_id_route_delete",
+      "src_app_api_projects_id_route_put",
+      "src_app_api_projects_route",
+      "src_app_api_projects_route_get",
+      "src_app_api_projects_route_post",
+      "src_app_api_upload_route",
+      "src_app_api_upload_route_post",
+      "src_app_client_page_landingpage",
+      "src_app_client_projects_slug_page",
+      "src_app_client_projects_slug_page_generatemetadata",
+      "src_app_client_projects_slug_page_generatestaticparams",
+      "src_app_client_projects_slug_page_projectpage",
+      "src_app_client_projects_slug_page_projectpageprops",
+      "src_lib_auth_getsession",
+      "src_lib_db",
+      "src_lib_db_datapath",
+      "src_lib_db_generateid",
+      "src_lib_db_getcurrenttimestamp",
+      "src_lib_db_getportfoliodata",
+      "src_lib_db_saveportfoliodata"
+    ],
+    "1": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target"
+    ],
+    "2": [
+      "src_app_client_layout",
+      "src_app_client_layout_clientlayout",
+      "src_app_client_page",
+      "src_components_icons_platformicons",
+      "src_components_icons_platformicons_arrowrighticon",
+      "src_components_icons_platformicons_emailicon",
+      "src_components_icons_platformicons_externallinkicon",
+      "src_components_icons_platformicons_githubicon",
+      "src_components_icons_platformicons_globeicon",
+      "src_components_icons_platformicons_iconprops",
+      "src_components_icons_platformicons_linkedinicon",
+      "src_components_landing_hero",
+      "src_components_landing_hero_hero",
+      "src_components_landing_hero_heroprops",
+      "src_components_landing_projectsgrid",
+      "src_components_landing_projectsgrid_projectsgrid",
+      "src_components_landing_skillssection",
+      "src_components_landing_skillssection_skillssection",
+      "src_components_landing_skillssection_skillssectionprops"
+    ],
+    "3": [
+      "eslint",
+      "eslint_config_next",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_config_next",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_postcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "tailwindcss",
+      "tailwindcss_postcss",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript"
+    ],
+    "4": [
+      "src_app_admin_dashboard_layout",
+      "src_app_admin_dashboard_layout_admindashboardlayout",
+      "src_app_admin_dashboard_page",
+      "src_app_admin_dashboard_page_dashboardpage",
+      "src_app_admin_dashboard_projects_page",
+      "src_app_admin_dashboard_projects_page_projectspage",
+      "src_app_admin_login_page",
+      "src_app_admin_login_page_loginpage",
+      "src_components_ui_button",
+      "src_components_ui_button_button",
+      "src_components_ui_button_buttonprops",
+      "src_components_ui_card",
+      "src_components_ui_card_card",
+      "src_components_ui_card_cardprops",
+      "src_components_ui_modal",
+      "src_components_ui_modal_modal",
+      "src_components_ui_modal_modalprops"
+    ],
+    "5": [
+      "next",
+      "package",
+      "package_dependencies",
+      "package_dependencies_next",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version",
+      "react",
+      "react_dom"
+    ],
+    "6": [
+      "src_app_admin_dashboard_experience_page",
+      "src_app_admin_dashboard_experience_page_experiencepage",
+      "src_components_admin_experienceform",
+      "src_components_admin_experienceform_experienceform",
+      "src_components_admin_experienceform_experienceformprops",
+      "src_components_landing_experiencetimeline",
+      "src_components_landing_experiencetimeline_experiencetimeline",
+      "src_components_landing_experiencetimeline_experiencetimelineprops",
+      "src_lib_utils",
+      "src_lib_utils_formatdateshort",
+      "src_lib_utils_getmonthsdifference",
+      "src_types_index_experience"
+    ],
+    "7": [
+      "ref_mts",
+      "ref_next_dev_types_ts",
+      "ref_next_env_d_ts",
+      "ref_next_types_ts",
+      "ref_node_modules",
+      "ref_ts",
+      "ref_tsx",
+      "tsconfig",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "8": [
+      "src_app_api_auth_route",
+      "src_app_api_auth_route_post",
+      "src_lib_auth",
+      "src_lib_auth_createsession",
+      "src_lib_auth_destroysession",
+      "src_lib_auth_verifycredentials",
+      "src_proxy",
+      "src_proxy_config",
+      "src_proxy_proxy"
+    ],
+    "9": [
+      "src_components_admin_projectform",
+      "src_components_admin_projectform_projectform",
+      "src_components_admin_projectform_projectformprops",
+      "src_components_landing_projectsgrid_projectsgridprops",
+      "src_components_ui_textarea",
+      "src_components_ui_textarea_textarea",
+      "src_components_ui_textarea_textareaprops",
+      "src_lib_utils_slugify",
+      "src_types_index_project"
+    ],
+    "10": [
+      "src_app_admin_dashboard_settings_page",
+      "src_app_admin_dashboard_settings_page_settingspage",
+      "src_types_index",
+      "src_types_index_authpayload",
+      "src_types_index_bio",
+      "src_types_index_portfoliodata",
+      "src_types_index_session"
+    ],
+    "11": [
+      "src_app_layout",
+      "src_app_layout_metadata",
+      "src_app_layout_rootlayout"
+    ],
+    "12": [
+      "src_components_ui_input",
+      "src_components_ui_input_input",
+      "src_components_ui_input_inputprops"
+    ],
+    "13": [
+      "eslint_config",
+      "eslint_config_eslintconfig"
+    ],
+    "14": [
+      "next_config",
+      "next_config_nextconfig"
+    ],
+    "15": [
+      "postcss_config",
+      "postcss_config_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1839080459770115,
+    "1": 0.10526315789473684,
+    "2": 0.17543859649122806,
+    "3": 0.11764705882352941,
+    "4": 0.18382352941176472,
+    "5": 0.125,
+    "6": 0.2878787878787879,
+    "7": 0.2,
+    "8": 0.3888888888888889,
+    "9": 0.2777777777777778,
+    "10": 0.3333333333333333,
+    "11": 0.6666666666666666,
+    "12": 0.6666666666666666,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_lib_db_getportfoliodata",
+      "label": "getPortfolioData()",
+      "degree": 22
+    },
+    {
+      "id": "src_lib_auth_getsession",
+      "label": "getSession()",
+      "degree": 18
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "src_lib_db_saveportfoliodata",
+      "label": "savePortfolioData()",
+      "degree": 13
+    },
+    {
+      "id": "src_components_ui_button_button",
+      "label": "Button()",
+      "degree": 10
+    },
+    {
+      "id": "src_types_index_project",
+      "label": "Project",
+      "degree": 7
+    },
+    {
+      "id": "src_types_index_experience",
+      "label": "Experience",
+      "degree": 7
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 7
+    },
+    {
+      "id": "src_app_api_experience_route_post",
+      "label": "POST()",
+      "degree": 6
+    },
+    {
+      "id": "src_app_api_projects_route_post",
+      "label": "POST()",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "proxy()",
+      "target": "getSession()",
+      "source_files": [
+        "src/proxy.ts",
+        "src/lib/auth.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities; peripheral node `proxy()` unexpectedly reaches hub `getSession()`"
+    },
+    {
+      "source": "LandingPage()",
+      "target": "getPortfolioData()",
+      "source_files": [
+        "src/app/(client)/page.tsx",
+        "src/lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `LandingPage()` unexpectedly reaches hub `getPortfolioData()`"
+    },
+    {
+      "source": "generateStaticParams()",
+      "target": "getPortfolioData()",
+      "source_files": [
+        "src/app/(client)/projects/[slug]/page.tsx",
+        "src/lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `generateStaticParams()` unexpectedly reaches hub `getPortfolioData()`"
+    },
+    {
+      "source": "generateMetadata()",
+      "target": "getPortfolioData()",
+      "source_files": [
+        "src/app/(client)/projects/[slug]/page.tsx",
+        "src/lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `generateMetadata()` unexpectedly reaches hub `getPortfolioData()`"
+    },
+    {
+      "source": "ProjectPage()",
+      "target": "getPortfolioData()",
+      "source_files": [
+        "src/app/(client)/projects/[slug]/page.tsx",
+        "src/lib/db.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `ProjectPage()` unexpectedly reaches hub `getPortfolioData()`"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

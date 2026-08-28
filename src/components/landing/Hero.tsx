@@ -1,33 +1,28 @@
 import Link from "next/link";
+import { GitHubIcon, LinkedInIcon, EmailIcon, ArrowRightIcon } from "@/components/icons/PlatformIcons";
 
-interface HeroProps {
-  name: string;
-  title: string;
-  bio: string;
-}
+interface HeroProps { name: string; title: string; bio: string; }
 
 export default function Hero({ name, title, bio }: HeroProps) {
   return (
-    <section id="hero" className="min-h-screen bg-zinc-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(16,185,129,0.12),rgba(255,255,255,0))] flex items-center justify-center px-4">
-      <div className="max-w-2xl w-full text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
-          {name}
-        </h1>
-        <p className="text-2xl text-green-400 font-semibold mb-6 tracking-wide">{title}</p>
-        <p className="text-lg text-zinc-400 mb-8 leading-relaxed font-normal">{bio}</p>
-        <div className="flex gap-4 justify-center">
-          <Link
-            href="#projects"
-            className="px-6 py-3 text-lg bg-green-600 text-white font-medium rounded hover:bg-green-500 transition-colors shadow-lg shadow-green-900/30"
-          >
-            View My Work
-          </Link>
-          <Link
-            href="#experience"
-            className="px-6 py-3 text-lg bg-zinc-800 text-zinc-200 font-medium rounded hover:bg-zinc-700 transition-colors border border-zinc-700/50"
-          >
-            Experience
-          </Link>
+    <section id="hero" className="px-5 pt-16 pb-12 md:pt-20 md:pb-14">
+      <div className="max-w-6xl w-full mx-auto">
+        <div role="status" className="theme-control theme-text type-body mb-7 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 uppercase tracking-[0.14em]">
+          <span aria-hidden="true" className="theme-status-dot h-2 w-2 rounded-full" />
+          Open to work
+        </div>
+        <h1 className="theme-text type-display max-w-5xl">{name.split(" ").map((part, index) => <span key={`${part}-${index}`}>{part}{index < name.split(" ").length - 1 ? " " : ""}</span>)}</h1>
+
+        <p className="theme-text type-subheadline mt-4">{title}</p>
+        <p className="theme-text type-body mt-3 max-w-2xl">{bio}</p>
+        <div className="flex flex-wrap gap-3 mt-7">
+          <a href="https://github.com/abeaar" target="_blank" rel="noopener noreferrer" className="theme-control theme-text type-body inline-flex items-center gap-2 rounded-md border px-3 py-2"><GitHubIcon size={14} /> GitHub</a>
+          <a href="https://www.linkedin.com/in/abraarjh/" target="_blank" rel="noopener noreferrer" className="theme-control theme-text type-body inline-flex items-center gap-2 rounded-md border px-3 py-2"><LinkedInIcon size={14} /> LinkedIn</a>
+          <a href="mailto:abraarjh@gmail.com" className="theme-control theme-text type-body inline-flex items-center gap-2 rounded-md border px-3 py-2"><EmailIcon size={14} /> Email</a>
+        </div>
+        <div className="flex gap-4 mt-7">
+          <Link href="#projects" className="theme-button theme-text type-body inline-flex items-center gap-2 rounded-md px-4 py-2.5">View Projects <ArrowRightIcon size={14} /></Link>
+          <Link href="#contact" className="theme-control theme-text type-body rounded-md border px-4 py-2.5">Contact</Link>
         </div>
       </div>
     </section>

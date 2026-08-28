@@ -1,15 +1,16 @@
 {
   "bio": {
-    "name": "Abraar Jihaad Hibatullah",
-    "title": "Computer Science Graduate | iOS & Machine Learning Developer",
-    "bio": "Computer Science graduate with real-world project experience through Bangkit Academy by Google and Apple Developer Academy. Hands-on with Python, TensorFlow, and Keras for machine learning; Swift for iOS development; and JavaScript/Node.js with REST APIs and CI/CD for full-stack web development.",
+    "name": "Abraar Jihaad H.",
+    "title": "Software Engineer",
+    "bio": "Software engineer with experience building practical products across iOS, machine learning, backend systems, and web applications. Worked with Swift, SwiftUI, Flutter, Python, and JavaScript to build mobile apps, AI pipelines, and REST APIs. Focused on practical, scalable products.",
     "avatar": "/images/avatar.jpg"
   },
   "projects": [
     {
       "id": "1",
       "title": "K-sini: Indoor Navigation iOS App",
-      "description": "Indoor navigation app for train stations, built in a cross-functional team at Apple Developer Academy. GeoJSON-driven multi-floor mapping rendered as layered MapKit overlays, BFS shortest-path routing, and compass-guided directional haptic feedback for eyes-free navigation.",
+      "description": "Built an indoor navigation iOS app for train stations in a cross-functional team at Apple Developer Academy. Rendered GeoJSON-driven multi-floor maps as layered MapKit overlays, with BFS shortest-path routing and compass-guided haptic feedback. Shipped a working app that guides passengers eyes-free across station floors.",
+      "short_description": "Built an indoor navigation iOS app for train stations, covering multi-floor MapKit mapping, BFS routing, and eyes-free haptic guidance. Shipped a working app with a cross-functional team at Apple Developer Academy.",
       "slug": "ksini-indoor-navigation",
       "tags": [
         "Swift",
@@ -26,7 +27,8 @@
     {
       "id": "2",
       "title": "Kriptoin: Crypto Trading Simulation App",
-      "description": "Risk-free cryptocurrency trading simulation built with Flutter. Real-time market data from the CoinGecko API with a Hive-based caching layer, SHA-256 password hashing with fingerprint biometric login, and 7 coordinated Provider state managers across features.",
+      "description": "Developed a risk-free cryptocurrency trading simulation app in Flutter. Pulled real-time market data from the CoinGecko API through a Hive caching layer, adding SHA-256 password hashing, fingerprint biometric login, and 7 coordinated Provider state managers. Delivered a fully functional trading simulator end to end.",
+      "short_description": "Developed a risk-free crypto trading simulator in Flutter with real-time CoinGecko market data, biometric login, and offline caching. Delivered a complete, working product end to end.",
       "slug": "kriptoin-mobile-app",
       "tags": [
         "Flutter",
@@ -43,7 +45,8 @@
     {
       "id": "3",
       "title": "PixPlay: Cloud-Based Music Player",
-      "description": "Full-stack music player — React frontend and an Express.js REST API (MVC) with Sequelize over MySQL, JWT authentication with refresh-token cookies, and an automated Cloud Build CI/CD pipeline deploying Docker images to Cloud Run.",
+      "description": "Built a cloud-based music player with a React frontend and an Express.js REST API in MVC. Used Sequelize over MySQL, JWT authentication with refresh-token cookies, and a Cloud Build CI/CD pipeline deploying Docker images to Cloud Run. Achieved fully automated, repeatable deployments on every push.",
+      "short_description": "Built a cloud-based music player with a React frontend, Express.js API, and JWT auth over MySQL. Achieved fully automated Docker deployments to Cloud Run on every push.",
       "slug": "pixplay-music-player",
       "tags": [
         "Node.js",
@@ -61,7 +64,8 @@
     {
       "id": "4",
       "title": "ML for Earthquake Classification — Undergraduate Thesis",
-      "description": "End-to-end ML pipeline over 2,800+ seismic events: ObsPy waveform processing, a CNN autoencoder with a custom multi-domain loss as an unsupervised feature extractor, and an XGBoost classifier — improving accuracy from 90% to 98%.",
+      "description": "Built an end-to-end ML pipeline classifying 2,800+ seismic events for my undergraduate thesis. Processed waveforms with ObsPy, used a CNN autoencoder with a custom multi-domain loss as an unsupervised feature extractor, and classified with XGBoost. Improved classification accuracy from 90% to 98%.",
+      "short_description": "Built an end-to-end ML pipeline classifying 2,800+ seismic events for my undergraduate thesis. Improved classification accuracy from 90% to 98%.",
       "slug": "ml-earthquake-classification",
       "tags": [
         "Python",
@@ -77,7 +81,8 @@
     {
       "id": "5",
       "title": "SIGAP: AI News Analysis Web App",
-      "description": "FastAPI backend with web scrapers (BeautifulSoup, Selenium) collecting Indonesian news portals into an SQLite database via SQLAlchemy, and an LLM pipeline using locally hosted Llama 3.2 (Ollama) that summarizes and generates solutions for every article — 1,000+ articles monthly.",
+      "description": "Built an AI news analysis web app for Indonesian news portals. Scraped articles with BeautifulSoup and Selenium into SQLite via SQLAlchemy, then ran a locally hosted Llama 3.2 (Ollama) pipeline that summarizes each article and generates solutions. Processed 1,000+ articles monthly.",
+      "short_description": "Built an AI news analysis web app that scrapes Indonesian portals and summarizes them with a locally hosted Llama 3.2 pipeline. Processes 1,000+ articles monthly.",
       "slug": "sigap-web-app",
       "tags": [
         "Python",
@@ -94,7 +99,8 @@
     {
       "id": "6",
       "title": "Air Quality Analysis",
-      "description": "Comprehensive data visualization and patterns extraction for the Beijing Station air quality parameters.",
+      "description": "Analyzed the Beijing Station air quality dataset end to end. Used Python with Pandas to clean, explore, and visualize the station's measurement parameters. Extracted the dataset's pollution patterns and trends into a comprehensive analysis.",
+      "short_description": "Analyzed the Beijing Station air quality dataset with Python and Pandas. Extracted the dataset's pollution patterns and trends into a comprehensive analysis.",
       "slug": "air-quality-analysis",
       "tags": [
         "Python",
@@ -112,7 +118,14 @@
       "id": "1",
       "company": "Apple Developer Academy @ BINUS",
       "role": "Junior Developer",
-      "description": "A nine-month program run by Apple and BINUS that teaches iOS development based on a research and development process. Working in cross-functional teams to design, build, and ship real apps.",
+      "description": "Selected for Apple's nine-month iOS development program with BINUS. Designed and shipped real apps in cross-functional teams through a research and development process, working daily with Swift and SwiftUI.",
+      "employment_type": "Academy",
+      "location": "Tangerang Selatan, Indonesia",
+      "tags": [
+        "Swift",
+        "SwiftUI",
+        "iOS"
+      ],
       "start_date": "2026-03-01",
       "end_date": null,
       "is_current": true,
@@ -122,7 +135,14 @@
       "id": "2",
       "company": "Kepolisian Daerah Istimewa Yogyakarta (POLDA DIY)",
       "role": "Back-end / AI Engineer Intern",
-      "description": "Built the backend of SIGAP, a web-based news scraping system with LLM-powered analysis — FastAPI REST endpoints, scrapers covering four Indonesian news portals, and a locally hosted Llama 3.2 (Ollama) pipeline that summarizes and classifies 1,000+ articles monthly, improving analysis speed from hours to minutes.",
+      "description": "Built the backend for a web-based news scraping system with LLM-powered analysis. Developed FastAPI endpoints and a locally hosted Llama 3.2 pipeline that processed 1,000+ articles monthly.",
+      "employment_type": "Internship",
+      "location": "Indonesia",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "LLM"
+      ],
       "start_date": "2025-04-01",
       "end_date": "2025-06-30",
       "is_current": false,
@@ -132,7 +152,14 @@
       "id": "3",
       "company": "Bangkit Academy 2024 by Google",
       "role": "ML Engineer",
-      "description": "A Google-led academy designed to produce tech talent for Indonesia, focused on Machine Learning, Mobile Development, and Cloud Computing. Built machine learning pipelines using TensorFlow and Keras. Graduated with Distinction, ranked among the top 10% of the cohort.",
+      "description": "Completed Google's academy spanning machine learning, mobile development, and cloud computing. Graduated with Distinction, ranked among the top 10% of the cohort.",
+      "employment_type": "Academy",
+      "location": "Jakarta, Indonesia",
+      "tags": [
+        "TensorFlow",
+        "Keras",
+        "Python"
+      ],
       "start_date": "2024-08-01",
       "end_date": "2024-12-31",
       "is_current": false,
@@ -140,20 +167,26 @@
     },
     {
       "id": "4",
-      "company": "AIESEC in UPN \"Veteran\" Yogyakarta",
-      "role": "Team Leader, Quality & Customer Experience — AIESEC Future Leaders",
-      "description": "Led the Quality & Customer Experience team for AIESEC Future Leaders. Increased project profitability by 75% over a 12-month period, exceeding initial forecasts, and managed customer relations with an average satisfaction score of 9.7 out of 10.",
-      "start_date": "2024-02-01",
-      "end_date": "2025-01-31",
+      "company": "AIESEC in Indonesia",
+      "role": "Customer Experience Manager",
+      "description": "Automated registration validation, certificate generation, and acceptance emails with Google Apps Script. Cut a three-person workflow down to one person, handling around 50 registrants per day.",
+      "employment_type": "Volunteer",
+      "location": "Jakarta, Indonesia",
+      "tags": [
+        "JavaScript",
+        "Google Apps Script",
+        "Automation"
+      ],
+      "start_date": "2024-08-01",
+      "end_date": "2024-09-30",
       "is_current": false,
-      "created_at": "2024-02-01T00:00:00Z"
+      "created_at": "2024-08-01T00:00:00Z"
     }
   ],
   "skills": [
     "Python",
     "TensorFlow",
-    "Keras",
-    "XGBoost",
+    "PyTorch",
     "Swift",
     "SwiftUI",
     "Flutter",
@@ -163,8 +196,9 @@
     "React",
     "FastAPI",
     "REST APIs",
-    "MySQL",
     "Ollama",
+    "Hugging Face",
+    "MLX",
     "Docker",
     "Google Cloud",
     "CI/CD"
