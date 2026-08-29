@@ -7,9 +7,9 @@ export default function Tags({ tags, className = "" }: TagsProps) {
   if (!tags?.length) return null;
 
   return (
-    <div className={`flex flex-wrap gap-2 ${className}`}>
+    <div className={`portfolio-tag-list ${className}`}>
       {tags.map((tag) => (
-        <span key={tag} className="theme-control theme-text tag rounded-full border px-3 py-1">
+        <span key={tag} className="portfolio-tag">
           {tag}
         </span>
       ))}

@@ -3,7 +3,10 @@ import Hero from "@/components/landing/Hero";
 import ProjectsGrid from "@/components/landing/ProjectsGrid";
 import ExperienceTimeline from "@/components/landing/ExperienceTimeline";
 import SkillsSection from "@/components/landing/SkillsSection";
-import { EmailIcon, GitHubIcon, LinkedInIcon } from "@/components/icons/PlatformIcons";
+import {
+  EmailIcon,
+  ExternalLinkIcon,
+} from "@/components/icons/PlatformIcons";
 
 export default async function LandingPage() {
   const data = await getPortfolioData();
@@ -14,29 +17,41 @@ export default async function LandingPage() {
         name={data.bio.name}
         title={data.bio.title}
         bio={data.bio.bio}
+        skills={data.skills}
       />
       <ExperienceTimeline experience={data.experience} />
       <ProjectsGrid projects={data.projects} />
       <SkillsSection skills={data.skills} />
-      <section id="contact" className="theme-border border-b px-5 py-24 md:py-32">
-        <div className="mx-auto max-w-6xl">
-          <div className="mt-16 rounded-2xl border border-neutral-700 bg-neutral-800 p-8 md:p-12 lg:p-16">
-            <div className="max-w-3xl">
-              <h2 className="type-subheadline text-3xl font-semibold text-white">Let&apos;s work together.</h2>
-              <p className="type-body mt-6 max-w-2xl text-white/70">I&apos;m open to freelance work, full-time roles, and interesting side projects. If you have something in mind, reach out.</p>
-              <a href="mailto:abraarjh@gmail.com" className="mt-8 inline-flex items-center gap-2 rounded-lg bg-neutral-700 px-5 py-3 font-semibold text-white transition-colors hover:bg-neutral-600">
-                <EmailIcon size={18} />
-                Send me an email
+      <section id="contact" className="portfolio-section contact-section">
+        <div className="portfolio-section__inner contact-section__inner">
+          <div>
+            <p className="section-kicker">04 / Open channel</p>
+            <h2>Let&apos;s build.</h2>
+          </div>
+
+          <div className="contact-section__side">
+            <p>
+              I&apos;m open to freelance work, full-time roles, and thoughtful side
+              projects. If the problem is useful and the ambition is real, let&apos;s
+              talk.
+            </p>
+            <a href="mailto:abraarjh@gmail.com" className="portfolio-button">
+              Start a conversation <EmailIcon size={17} />
+            </a>
+            <div className="contact-section__links">
+              <a
+                href="https://github.com/abeaar"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <ExternalLinkIcon size={14} />
               </a>
-            </div>
-            <div className="mt-12 grid gap-3">
-              <a href="https://github.com/abeaar" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-900 px-5 py-3 font-semibold text-white transition-colors hover:bg-neutral-700">
-                <GitHubIcon size={19} />
-                GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/abraarjh/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-lg border border-neutral-700 bg-neutral-900 px-5 py-3 font-semibold text-white transition-colors hover:bg-neutral-700">
-                <LinkedInIcon size={19} />
-                LinkedIn
+              <a
+                href="https://www.linkedin.com/in/abraarjh/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn <ExternalLinkIcon size={14} />
               </a>
             </div>
           </div>
