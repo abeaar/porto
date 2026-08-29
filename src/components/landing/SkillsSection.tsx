@@ -3,45 +3,69 @@ interface SkillsSectionProps {
 }
 
 const stackGroups = [
-  { title: "Tools", items: ["Docker", "Google Cloud", "CI/CD"] },
-  { title: "Website", items: ["React", "Node.js", "Express.js", "FastAPI", "REST APIs"] },
-  { title: "Mobile", items: ["Swift", "SwiftUI", "Flutter"] },
-  { title: "AI Engineering", items: ["TensorFlow", "PyTorch", "Ollama", "Hugging Face", "MLX"] },
+  {
+    title: "Mobile systems",
+    items: ["Swift", "SwiftUI", "Flutter"],
+  },
+  {
+    title: "Web and APIs",
+    items: ["JavaScript", "React", "Node.js", "Express.js", "FastAPI", "REST APIs"],
+  },
+  {
+    title: "AI and data",
+    items: ["Python", "TensorFlow", "PyTorch", "Ollama", "Hugging Face", "MLX"],
+  },
+  {
+    title: "Infrastructure",
+    items: ["Docker", "Google Cloud", "CI/CD"],
+  },
 ];
 
 export default function SkillsSection({ skills }: SkillsSectionProps) {
   const availableSkills = new Set(skills);
+  const knownSkills = new Set(stackGroups.flatMap((group) => group.items));
   const groups = stackGroups
     .map((group) => ({
       ...group,
       items: group.items.filter((item) => availableSkills.has(item)),
     }))
     .filter((group) => group.items.length > 0);
+  const uncategorized = skills.filter((skill) => !knownSkills.has(skill));
+
+  if (uncategorized.length > 0) {
+    groups.push({ title: "Additional tools", items: uncategorized });
+  }
 
   return (
-    <section id="skills" className="theme-border border-b px-5 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
-        <h2 className="theme-text type-body uppercase tracking-[0.24em]">
-          Tech Stack
-        </h2>
+    <section id="skills" className="portfolio-section skills-section">
+      <div className="portfolio-section__inner">
+        <div className="skills-section__head">
+          <div>
+            <p className="section-kicker">03 / Working toolkit</p>
+            <h2 className="editorial-heading">Capabilities</h2>
+          </div>
+          <p className="skills-section__copy">
+            I choose tools by the problem, then connect product thinking,
+            implementation, and delivery into one practical workflow.
+          </p>
+        </div>
 
         {groups.length === 0 ? (
-          <p className="theme-text mt-16">No skills added yet.</p>
+          <p>No skills added yet.</p>
         ) : (
-          <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-14 xl:grid-cols-4">
-            {groups.map((group) => (
-              <div key={group.title}>
-                <h3 className="theme-text type-body uppercase tracking-[0.1em]">
-                  {group.title}
-                </h3>
-                <ul className="mt-7 space-y-4">
+          <div className="skills-grid">
+            {groups.map((group, index) => (
+              <article className="skill-group" key={group.title}>
+                <p className="skill-group__index">
+                  <span>Module / {String(index + 1).padStart(2, "0")}</span>
+                </p>
+                <h3>{group.title}</h3>
+                <ul>
                   {group.items.map((skill) => (
-                    <li key={skill} className="theme-text type-body">
-                      {skill}
-                    </li>
+                    <li key={skill}>{skill}</li>
                   ))}
                 </ul>
-              </div>
+              </article>
             ))}
           </div>
         )}

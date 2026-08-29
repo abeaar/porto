@@ -1,30 +1,100 @@
-import Link from "next/link";
-import { GitHubIcon, LinkedInIcon, EmailIcon, ArrowRightIcon } from "@/components/icons/PlatformIcons";
+import {
+  EmailIcon,
+  GitHubIcon,
+  LinkedInIcon,
+} from "@/components/icons/PlatformIcons";
 
-interface HeroProps { name: string; title: string; bio: string; }
+interface HeroProps {
+  name: string;
+  title: string;
+  bio: string;
+  skills: string[];
+}
 
-export default function Hero({ name, title, bio }: HeroProps) {
+export default function Hero({ name, title, bio, skills }: HeroProps) {
+  const [firstName, ...restOfName] = name.replace(/\.$/, "").split(" ");
+  const marqueeSkills = skills.slice(0, 12);
+
   return (
-    <section id="hero" className="px-5 pt-16 pb-12 md:pt-20 md:pb-14">
-      <div className="max-w-6xl w-full mx-auto">
-        <div role="status" className="theme-control theme-text type-body mb-7 inline-flex items-center gap-2 rounded-full border px-3.5 py-2 uppercase tracking-[0.14em]">
-          <span aria-hidden="true" className="theme-status-dot h-2 w-2 rounded-full" />
-          Open to work
+    <>
+      <section id="hero" className="portfolio-hero">
+        <div className="portfolio-hero__topline">
+          <span className="portfolio-hero__status">
+            Available for selected work
+          </span>
+          <span>Based in Indonesia / GMT+7</span>
         </div>
-        <h1 className="theme-text type-display max-w-5xl">{name.split(" ").map((part, index) => <span key={`${part}-${index}`}>{part}{index < name.split(" ").length - 1 ? " " : ""}</span>)}</h1>
 
-        <p className="theme-text type-subheadline mt-4">{title}</p>
-        <p className="theme-text type-body mt-3 max-w-2xl">{bio}</p>
-        <div className="flex flex-wrap gap-3 mt-7">
-          <a href="https://github.com/abeaar" target="_blank" rel="noopener noreferrer" className="theme-control theme-text type-body inline-flex items-center gap-2 rounded-md border px-3 py-2"><GitHubIcon size={14} /> GitHub</a>
-          <a href="https://www.linkedin.com/in/abraarjh/" target="_blank" rel="noopener noreferrer" className="theme-control theme-text type-body inline-flex items-center gap-2 rounded-md border px-3 py-2"><LinkedInIcon size={14} /> LinkedIn</a>
-          <a href="mailto:abraarjh@gmail.com" className="theme-control theme-text type-body inline-flex items-center gap-2 rounded-md border px-3 py-2"><EmailIcon size={14} /> Email</a>
+        <div className="portfolio-hero__heading">
+          <p className="portfolio-hero__eyebrow">
+            Portfolio / Software Engineering / 2026
+          </p>
+          <h1 aria-label={name}>
+            <span>{firstName}</span>
+            <span>{restOfName.join(" ")}</span>
+          </h1>
+
+          <div className="signal-art" aria-hidden="true">
+            <span className="signal-art__rays" />
+            <span className="signal-art__ring signal-art__ring--one" />
+            <span className="signal-art__ring signal-art__ring--two" />
+            <span className="signal-art__axis" />
+            <span className="signal-art__core">AJH</span>
+          </div>
         </div>
-        <div className="flex gap-4 mt-7">
-          <Link href="#projects" className="theme-button theme-text type-body inline-flex items-center gap-2 rounded-md px-4 py-2.5">View Projects <ArrowRightIcon size={14} /></Link>
-          <Link href="#contact" className="theme-control theme-text type-body rounded-md border px-4 py-2.5">Contact</Link>
+
+        <div className="portfolio-hero__footer">
+          <p className="portfolio-hero__role">{title}</p>
+          <p className="portfolio-hero__bio">{bio}</p>
+          <div className="portfolio-hero__links" aria-label="Social links">
+            <a
+              href="https://github.com/abeaar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio-icon-link"
+              aria-label="GitHub"
+            >
+              <GitHubIcon size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abraarjh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio-icon-link"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon size={16} />
+            </a>
+            <a
+              href="mailto:abraarjh@gmail.com"
+              className="portfolio-icon-link"
+              aria-label="Email"
+            >
+              <EmailIcon size={16} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div
+        className="skills-ticker"
+        aria-label={`Selected skills: ${marqueeSkills.join(", ")}`}
+      >
+        <div className="skills-ticker__track" aria-hidden="true">
+          {[0, 1].map((group) => (
+            <div className="skills-ticker__group" key={group}>
+              {marqueeSkills.map((skill) => (
+                <span
+                  className="skills-ticker__item"
+                  key={`${group}-${skill}`}
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </>
   );
 }

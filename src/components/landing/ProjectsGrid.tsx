@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "@/types";
+import { ArrowRightIcon } from "@/components/icons/PlatformIcons";
 import Tags from "@/components/ui/Tags";
+import { Project } from "@/types";
 
 interface ProjectsGridProps {
   projects: Project[];
@@ -9,65 +10,63 @@ interface ProjectsGridProps {
 
 export default function ProjectsGrid({ projects }: ProjectsGridProps) {
   return (
-    <section
-      id="projects"
-      className="theme-border border-b px-5 py-24 md:py-32"
-    >
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-12">
+    <section id="projects" className="portfolio-section projects-section">
+      <div className="portfolio-section__inner">
+        <div className="projects-section__head">
           <div>
-            <h3 className="type-headline mt-4">
-              Projects
-            </h3>
+            <p className="section-kicker">02 / Selected builds</p>
+            <h2 className="editorial-heading">Proof of work</h2>
           </div>
+          <span className="projects-section__count" aria-label={`${projects.length} projects`}>
+            {String(projects.length).padStart(2, "0")}
+          </span>
         </div>
 
         {projects.length === 0 ? (
-          <p className="theme-text">No projects added yet.</p>
+          <p>No projects added yet.</p>
         ) : (
-          <div className="grid items-stretch gap-x-8 gap-y-12 md:grid-cols-2">
-            {projects.map((project, index) => (
-              <article
-                key={project.id}
-                className="theme-project group flex h-full cursor-pointer flex-col border-t pt-5 transition-colors"
-              >
-                <Link
-                  href={`/projects/${project.slug}`}
-                  aria-label={`View ${project.title} case study`}
-                  className="flex flex-1 flex-col"
-                >
-                  <div className="theme-soft relative aspect-[16/10] w-full overflow-hidden">
-                    {project.image_url ? (
-                      <Image
-                        src={project.image_url}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
-                      />
-                    ) : (
-                        <span className="theme-text type-headline absolute inset-0 flex items-center justify-center">
-                        0{index + 1}
-                      </span>
-                    )}
-                  </div>
+          <div className="projects-grid">
+            {projects.map((project, index) => {
+              const number = String(index + 1).padStart(2, "0");
+              const artVariant = (index % 3) + 1;
 
-                  <div className="flex flex-1 flex-col pt-5">
-                    <h3 className="theme-text type-subheadline mt-3 min-h-[3.5rem]">
-                      {project.title}
-                    </h3>
-                    <p className="theme-text type-body mt-3">
-                      {project.short_description ?? project.description}
-                    </p>
-
-                    <div className="mt-auto pt-6">
-                      <Tags tags={project.tags} className="min-h-8 items-start" />
+              return (
+                <article key={project.id} className="project-card">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    aria-label={`View ${project.title} case study`}
+                  >
+                    <div className={`project-art project-art--${artVariant}`}>
+                      {project.image_url && (
+                        <Image
+                          src={project.image_url}
+                          alt=""
+                          fill
+                          sizes="(max-width: 560px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                          className="object-cover"
+                        />
+                      )}
+                      <span className="project-art__number">{number}</span>
                     </div>
-                  </div>
-                </Link>
 
-              </article>
-            ))}
+                    <div className="project-card__body">
+                      <div className="project-card__meta">
+                        <span>Case study / {number}</span>
+                        <span>{new Date(project.created_at).getFullYear()}</span>
+                      </div>
+                      <h3>{project.title}</h3>
+                      <p className="project-card__description">
+                        {project.short_description ?? project.description}
+                      </p>
+                      <Tags tags={project.tags} />
+                      <span className="project-card__cta">
+                        Explore project <ArrowRightIcon size={15} />
+                      </span>
+                    </div>
+                  </Link>
+                </article>
+              );
+            })}
           </div>
         )}
       </div>
