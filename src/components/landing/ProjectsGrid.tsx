@@ -14,12 +14,8 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
       <div className="portfolio-section__inner">
         <div className="projects-section__head">
           <div>
-            <p className="section-kicker">02 / Selected builds</p>
-            <h2 className="editorial-heading">Proof of work</h2>
+            <h2 className="editorial-heading">Projects</h2>
           </div>
-          <span className="projects-section__count" aria-label={`${projects.length} projects`}>
-            {String(projects.length).padStart(2, "0")}
-          </span>
         </div>
 
         {projects.length === 0 ? (
@@ -50,10 +46,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
                     </div>
 
                     <div className="project-card__body">
-                      <div className="project-card__meta">
-                        <span>Case study / {number}</span>
-                        <span>{new Date(project.created_at).getFullYear()}</span>
-                      </div>
+           
                       <h3>{project.title}</h3>
                       <p className="project-card__description">
                         {project.short_description ?? project.description}
