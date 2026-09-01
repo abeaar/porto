@@ -20,7 +20,7 @@ export default function ExperienceTimeline({
       className="portfolio-section experience-section"
     >
       <div className="portfolio-section__inner">
-        <div className="experience-section__intro">
+        <div className="portfolio-section__head">
           <div>
             <h2 className="editorial-heading">Worked Experience</h2>
           </div>
@@ -30,7 +30,7 @@ export default function ExperienceTimeline({
           <p>No experience added yet.</p>
         ) : (
           <div className="experience-grid">
-            {sorted.map((exp, index) => {
+            {sorted.map((exp) => {
               const startYear = new Date(exp.start_date).getFullYear();
 
               return (

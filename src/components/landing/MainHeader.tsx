@@ -57,39 +57,41 @@ export default function MainHeader() {
   return (
     <>
       <header className="portfolio-header">
-        <button
-          type="button"
-          className="portfolio-theme-toggle"
-          aria-label="Toggle color theme"
-          title="Toggle color theme"
-          onClick={toggleTheme}
-        >
-          <svg
-            className="portfolio-theme-toggle__sun"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        <div className="portfolio-header__inner">
+          <button
+            type="button"
+            className="portfolio-theme-toggle"
+            aria-label="Toggle color theme"
+            title="Toggle color theme"
+            onClick={toggleTheme}
           >
-            <circle cx="12" cy="12" r="3.5" />
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
-          </svg>
-          <svg
-            className="portfolio-theme-toggle__moon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+            <svg
+              className="portfolio-theme-toggle__sun"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="3.5" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
+            </svg>
+            <svg
+              className="portfolio-theme-toggle__moon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8a8.5 8.5 0 1 0 11.4 11.4Z" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            aria-label="Open menu"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            className="portfolio-menu-button"
+            onClick={() => setIsOpen(true)}
           >
-            <path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8a8.5 8.5 0 1 0 11.4 11.4Z" />
-          </svg>
-        </button>
-        <button
-          type="button"
-          aria-label="Open menu"
-          aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
-          className="portfolio-menu-button"
-          onClick={() => setIsOpen(true)}
-        >
-          [ Menu ]
-        </button>
+            [ Menu ]
+          </button>
+        </div>
       </header>
 
       <div

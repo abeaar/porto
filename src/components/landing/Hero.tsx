@@ -18,7 +18,7 @@ interface HeroIdentityProps {
 }
 
 function HeroIdentity({ name, title, bio }: HeroIdentityProps) {
-  const [firstName, ...restOfName] = name.replace(/\.$/, "").split(" ");
+  const [firstName, ...restOfName] = name.split(" ");
 
   return (
     <div className="portfolio-hero__identity">
@@ -57,6 +57,13 @@ function HeroIdentity({ name, title, bio }: HeroIdentityProps) {
             aria-label="Email"
           >
             <EmailIcon size={16} />
+          </a>
+          <a
+            href="/Abraar-Jihaad-Resume.pdf"
+            className="portfolio-resume-link"
+            download
+          >
+            Download resume
           </a>
         </div>
       </div>

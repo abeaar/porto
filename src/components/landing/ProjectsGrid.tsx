@@ -12,7 +12,7 @@ export default function ProjectsGrid({ projects }: ProjectsGridProps) {
   return (
     <section id="projects" className="portfolio-section projects-section">
       <div className="portfolio-section__inner">
-        <div className="projects-section__head">
+        <div className="portfolio-section__head">
           <div>
             <h2 className="editorial-heading">Projects</h2>
           </div>

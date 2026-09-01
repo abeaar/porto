@@ -21,7 +21,7 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="portfolio-section skills-section">
       <div className="portfolio-section__inner">
-        <div className="skills-section__head">
+        <div className="portfolio-section__head">
           <div>
             <h2 className="editorial-heading">Skills</h2>
           </div>

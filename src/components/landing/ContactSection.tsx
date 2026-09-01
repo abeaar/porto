@@ -7,7 +7,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="portfolio-section contact-section">
       <div className="portfolio-section__inner">
-        <div className="skills-section__head">
+        <div className="portfolio-section__head">
           <div>
             <h2 className="editorial-heading">Contact</h2>
           </div>

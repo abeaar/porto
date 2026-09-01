@@ -1,10 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4f4f4;
-  --ink: #1e1e1e;
+  --layout-max-width: 100rem;
+  --layout-gutter: clamp(1.25rem, 4vw, 5rem);
+  --section-space: clamp(5rem, 10vw, 10rem);
+  --section-heading-space: clamp(4rem, 8vw, 7rem);
+  --white: #fffaf0;
+  --black: #111111;
+  --paper: var(--white);
+  --ink: var(--black);
   --blue: #19428d;
   --mauve: #b389a4;
+  --accent-foreground: var(--white);
+  --accent-ink: var(--black);
+  --primary-accent: var(--mauve);
+  --inverse-accent: var(--blue);
   --background: var(--ink);
   --foreground: var(--paper);
   --surface: var(--paper);
@@ -13,12 +23,12 @@
   --surface-soft: color-mix(in srgb, var(--paper) 8%, transparent);
   --border: color-mix(in srgb, var(--paper) 28%, transparent);
   --border-strong: var(--paper);
-  --header-background: var(--blue);
+  --header-background: var(--ink);
   --overlay: color-mix(in srgb, var(--ink) 72%, transparent);
   --accent: var(--mauve);
   --accent-shadow: color-mix(in srgb, var(--mauve) 58%, transparent);
   --selection-background: var(--mauve);
-  --selection-foreground: var(--ink);
+  --selection-foreground: var(--accent-ink);
   color-scheme: dark;
 }
 
@@ -27,9 +37,10 @@
 }
 
 :root[data-theme="light"] {
-  --paper: #1e1e1e;
-  --ink: #f4f4f4;
-  --blue: #f7f4ef;
+  --paper: var(--black);
+  --ink: var(--white);
+  --primary-accent: var(--blue);
+  --inverse-accent: var(--mauve);
   color-scheme: light;
 }
 
@@ -78,7 +89,7 @@ button:focus-visible {
 
 .portfolio-site {
   min-height: 100vh;
-  background: var(--blue);
+  background: var(--ink);
   color: var(--paper);
   padding: clamp(0.5rem, 1.25vw, 1.5rem);
 }
@@ -87,20 +98,27 @@ button:focus-visible {
   min-height: calc(100vh - clamp(1rem, 2.5vw, 3rem));
   overflow: clip;
   border: 1px solid var(--paper);
-  background: var(--blue);
+  background: var(--ink);
 }
 
 .portfolio-header {
   position: sticky;
   top: 0;
   z-index: 60;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   min-height: 5.25rem;
   border-bottom: 1px solid var(--paper);
-  background: color-mix(in srgb, var(--blue) 94%, transparent);
+  background: color-mix(in srgb, var(--ink) 94%, transparent);
   backdrop-filter: blur(12px);
+}
+
+.portfolio-header__inner {
+  display: flex;
+  width: min(100%, var(--layout-max-width));
+  min-height: inherit;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-inline: var(--layout-gutter);
 }
 
 .portfolio-theme-toggle {
@@ -108,7 +126,6 @@ button:focus-visible {
   width: 2.25rem;
   aspect-ratio: 1;
   place-items: center;
-  margin-left: clamp(1rem, 2.5vw, 2rem);
   padding: 0;
   border: 1px solid var(--paper);
   border-radius: 50%;
@@ -119,8 +136,8 @@ button:focus-visible {
 }
 
 .portfolio-theme-toggle:hover {
-  background: var(--paper);
-  color: var(--blue);
+  background: var(--blue);
+  color: var(--accent-foreground);
   transform: rotate(8deg);
 }
 
@@ -146,8 +163,6 @@ button:focus-visible {
 .portfolio-menu-button {
   position: relative;
   display: inline-flex;
-  margin-right: clamp(1rem, 2.5vw, 2rem);
-  margin-left: 0.85rem;
   padding: 0.75rem 0;
   border: 0;
   background: transparent;
@@ -167,7 +182,7 @@ button:focus-visible {
   display: grid;
   place-items: stretch;
   padding: 0.5rem;
-  background: var(--blue);
+  background: var(--ink);
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
@@ -182,7 +197,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--paper);
-  background: var(--blue);
+  background: var(--ink);
   transform: translateY(-1rem);
   transition: transform 220ms ease;
 }
@@ -247,7 +262,7 @@ button:focus-visible {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  background: var(--blue);
+  background: var(--ink);
   isolation: isolate;
 }
 
@@ -285,10 +300,11 @@ button:focus-visible {
   z-index: 2;
   display: flex;
   flex: 1;
-  width: 100%;
+  width: min(100%, var(--layout-max-width));
   align-items: center;
   justify-content: flex-start;
-  padding: clamp(3rem, 7vh, 5rem) clamp(1.25rem, 3.5vw, 4rem);
+  margin: 0 auto;
+  padding: clamp(3rem, 7vh, 5rem) var(--layout-gutter);
 }
 
 .portfolio-hero__identity {
@@ -367,6 +383,7 @@ button:focus-visible {
 
 .portfolio-hero__links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.55rem;
 }
@@ -376,23 +393,56 @@ button:focus-visible {
   width: 2.65rem;
   aspect-ratio: 1;
   place-items: center;
-  border: 1px solid var(--paper);
+  border: 1px solid var(--blue);
+  background: var(--blue);
   color: var(--paper);
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .portfolio-icon-link:hover {
-  background: var(--paper);
-  color: var(--blue);
+  background: var(--blue);
+  color: var(--paper);
   transform: translateY(-3px);
+}
+
+.portfolio-icon-link:active {
+  background: color-mix(in srgb, var(--blue) 82%, black);
+  transform: translateY(-1px);
+}
+
+.portfolio-resume-link {
+  display: inline-flex;
+  width: calc((2.65rem * 3) + (0.55rem * 2));
+  min-height: 2.65rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--mauve);
+  background: var(--mauve);
+  color: var(--paper);
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.portfolio-resume-link:hover {
+  color: var(--paper);
+  transform: translateY(-3px);
+}
+
+.portfolio-resume-link:active {
+  background: color-mix(in srgb, var(--mauve) 82%, black);
+  transform: translateY(-1px);
 }
 
 .skills-ticker {
   overflow: hidden;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  border-top: 1px solid var(--accent-ink);
+  border-bottom: 1px solid var(--accent-ink);
   background: var(--mauve);
-  color: var(--ink);
+  color: var(--accent-ink);
 }
 
 .skills-ticker__track {
@@ -432,9 +482,17 @@ button:focus-visible {
 }
 
 .portfolio-section__inner {
-  width: min(100%, 100rem);
+  width: min(100%, var(--layout-max-width));
   margin: 0 auto;
-  padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 4vw, 5rem);
+  padding: var(--section-space) var(--layout-gutter);
+}
+
+.portfolio-section__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-bottom: var(--section-heading-space);
 }
 
 .section-kicker {
@@ -483,14 +541,14 @@ button:focus-visible {
 }
 
 .portfolio-button:hover {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--blue);
+  color: var(--accent-foreground);
   transform: translateY(-3px);
 }
 
 .portfolio-button--paper:hover {
-  background: var(--paper);
-  color: var(--blue);
+  background: var(--blue);
+  color: var(--accent-foreground);
 }
 
 .portfolio-tag-list {
@@ -511,16 +569,8 @@ button:focus-visible {
 }
 
 .experience-section {
-  background: var(--paper);
-  color: var(--ink);
-}
-
-.experience-section__intro {
-  display: grid;
-  grid-template-columns: 1fr 0.8fr;
-  align-items: end;
-  gap: 4rem;
-  margin-bottom: clamp(4rem, 8vw, 7rem);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .experience-section__intro-copy {
@@ -532,16 +582,16 @@ button:focus-visible {
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--ink);
-  border-left: 1px solid var(--ink);
+  border-top: 1px solid var(--paper);
+  border-left: 1px solid var(--paper);
 }
 
 .experience-card {
   display: grid;
   grid-template-rows: auto 1fr;
   min-width: 0;
-  border-right: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  border-right: 1px solid var(--paper);
+  border-bottom: 1px solid var(--paper);
 }
 
 .experience-card__visual {
@@ -550,14 +600,14 @@ button:focus-visible {
   min-height: clamp(13rem, 27vw, 24rem);
   overflow: hidden;
   place-items: center;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--paper);
   background: var(--blue);
-  color: var(--paper);
+  color: var(--accent-foreground);
 }
 
 .experience-card:nth-child(2n) .experience-card__visual {
   background: var(--mauve);
-  color: var(--ink);
+  color: var(--accent-ink);
 }
 
 .experience-card__visual::before {
@@ -633,7 +683,7 @@ button:focus-visible {
 
 .experience-card__company {
   margin: 0.75rem 0 0;
-  color: var(--blue);
+  color: var(--primary-accent);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -654,14 +704,6 @@ button:focus-visible {
   color: var(--paper);
 }
 
-.projects-section__head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 3rem;
-  margin-bottom: clamp(4rem, 8vw, 7rem);
-}
-
 .projects-section__count {
   display: grid;
   width: clamp(5rem, 9vw, 8rem);
@@ -670,7 +712,7 @@ button:focus-visible {
   place-items: center;
   border: 1px solid var(--paper);
   border-radius: 50%;
-  color: var(--mauve);
+  color: var(--primary-accent);
   font-family: var(--font-newsreader, "Newsreader"), Georgia, serif;
   font-size: clamp(2rem, 4vw, 3.8rem);
 }
@@ -683,9 +725,21 @@ button:focus-visible {
 }
 
 .project-card {
+  position: relative;
   min-width: 0;
   border-right: 1px solid var(--paper);
   border-bottom: 1px solid var(--paper);
+  transition: transform 180ms ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  z-index: 1;
+  transform: translateY(-4px);
+}
+
+.project-card:active {
+  transform: translateY(-1px);
 }
 
 .project-card > a {
@@ -704,7 +758,7 @@ button:focus-visible {
   place-items: center;
   border-bottom: 1px solid var(--paper);
   background: var(--blue);
-  color: var(--paper);
+  color: var(--accent-foreground);
 }
 
 .project-art::before,
@@ -733,7 +787,7 @@ button:focus-visible {
 
 .project-art--2 {
   background: var(--mauve);
-  color: var(--ink);
+  color: var(--accent-ink);
 }
 
 .project-art--2::before {
@@ -751,7 +805,7 @@ button:focus-visible {
 
 .project-art--3 {
   background: var(--paper);
-  color: var(--blue);
+  color: var(--ink);
 }
 
 .project-art--3::before {
@@ -855,16 +909,8 @@ button:focus-visible {
 
 .skills-section {
   border-top: 1px solid var(--paper);
-  background: var(--blue);
+  background: var(--ink);
   color: var(--paper);
-}
-
-.skills-section__head {
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  align-items: end;
-  gap: 4rem;
-  margin-bottom: clamp(4rem, 8vw, 7rem);
 }
 
 .skills-section__copy {
@@ -934,13 +980,13 @@ button:focus-visible {
 
 .skill-group li::before {
   content: "+";
-  color: var(--mauve);
+  color: var(--primary-accent);
 }
 
 .contact-section {
-  border-top: 1px solid var(--ink);
-  background: var(--mauve);
-  color: var(--ink);
+  border-top: 1px solid var(--paper);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .contact-section__inner {
@@ -966,7 +1012,7 @@ button:focus-visible {
   display: flex;
   width: 100%;
   flex-direction: column;
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--paper);
 }
 
 .contact-section__links a {
@@ -974,8 +1020,8 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 0;
-  border-bottom: 1px solid var(--ink);
-  color: var(--ink);
+  border-bottom: 1px solid var(--paper);
+  color: var(--paper);
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-decoration: none;
@@ -997,7 +1043,7 @@ button:focus-visible {
   min-height: 5rem;
   padding: 0 1.5rem;
   border-top: 1px solid var(--paper);
-  background: var(--blue);
+  background: var(--ink);
   color: var(--paper);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
@@ -1029,7 +1075,7 @@ button:focus-visible {
   justify-content: space-between;
   overflow: hidden;
   padding: clamp(2rem, 4vw, 4rem);
-  background: var(--blue);
+  background: var(--ink);
   color: var(--paper);
   isolation: isolate;
 }
@@ -1088,7 +1134,7 @@ button:focus-visible {
   border: 1px solid var(--paper);
   border-radius: 50%;
   background: var(--mauve);
-  color: var(--ink);
+  color: var(--accent-ink);
   content: attr(data-project-number);
   font-family: var(--font-newsreader, "Newsreader"), Georgia, serif;
   font-size: clamp(2rem, 6vw, 5rem);
@@ -1122,17 +1168,17 @@ button:focus-visible {
 .case-meta {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--ink);
-  border-left: 1px solid var(--ink);
+  border-top: 1px solid var(--accent-ink);
+  border-left: 1px solid var(--accent-ink);
   background: var(--mauve);
-  color: var(--ink);
+  color: var(--accent-ink);
 }
 
 .case-meta__item {
   min-height: 10rem;
   padding: clamp(1.25rem, 3vw, 2.5rem);
-  border-right: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  border-right: 1px solid var(--accent-ink);
+  border-bottom: 1px solid var(--accent-ink);
 }
 
 .case-meta__item span {
@@ -1290,8 +1336,11 @@ button:focus-visible {
     font-size: clamp(1.75rem, 8vw, 2.4rem);
   }
 
-  .experience-section__intro,
-  .skills-section__head,
+  .portfolio-section__head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .contact-section__inner,
   .case-hero__description,
   .case-body {
@@ -1339,11 +1388,6 @@ button:focus-visible {
 
   .portfolio-hero__footer {
     gap: 1.25rem;
-  }
-
-  .projects-section__head {
-    align-items: flex-start;
-    flex-direction: column;
   }
 
   .projects-grid,
