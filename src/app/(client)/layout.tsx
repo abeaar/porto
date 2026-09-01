@@ -12,8 +12,7 @@ export default function ClientLayout({
         <div>{children}</div>
         <footer className="portfolio-footer">
           <p>&copy; {new Date().getFullYear()} Abraar Jihaad H.</p>
-          <p>Software engineer / Indonesia</p>
-          <p>End of transmission</p>
+          <p>Software engineer</p>
         </footer>
       </div>
     </div>
